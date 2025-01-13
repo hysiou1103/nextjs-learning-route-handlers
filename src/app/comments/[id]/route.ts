@@ -11,7 +11,7 @@ export async function GET(
   const { id } = await params;
 
   // 當輸入 url /comments/4時，就會重新導向到 /comments，從 network 觀察會發現狀態碼為 307
-  if (parseInt(params?.id) > comments.length) {
+  if (parseInt(id) > comments.length) {
     return redirect('/comments');
   }
 
