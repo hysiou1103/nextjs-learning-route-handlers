@@ -2,6 +2,8 @@ import { comments } from './data';
 
 // 使用 Thunder Client 這個 extension 來協助測試 API
 export async function GET() {
+  // Response.json() 是 Next.js 封裝好的方法，用來快速返回 JSON 格式的回應，
+  // 他將自動設置 Content-Type: application/json 標頭、狀態碼為 200 、並將 Response 自動序列化為 JSON 格式
   return Response.json(comments);
 }
 

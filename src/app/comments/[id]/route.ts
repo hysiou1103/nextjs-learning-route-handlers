@@ -25,3 +25,15 @@ export async function PATCH(
   comments[index].text = text; // 更新評論
   return Response.json(comments[index]); // return updated comments
 }
+
+export async function DELETE(
+  _request: Request,
+  { params }: { params: { id: string } }
+) {
+  const index = comments.findIndex(
+    (comment) => comment.id === parseInt(params.id)
+  );
+  const delectedComment = comments[index];
+  comments.splice(index, 1); // 刪除評論
+  return Response.json(delectedComment); // return deleted comment
+}
