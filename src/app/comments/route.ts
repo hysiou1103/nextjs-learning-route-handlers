@@ -18,7 +18,7 @@ export async function GET(request: NextRequest) {
 }
 
 // 使用 Thunder Client 這個 extension 來協助測試 API，可以先打 GET 請求，再打 POST 請求，最後再打 GET 請求，就可以看到新增的評論
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
   // 從請求中提取 JSON 主體
   const comment = await request.json();
 
